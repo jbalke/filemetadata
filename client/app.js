@@ -1,7 +1,7 @@
 (function() {
     var submit = document.getElementById('submit-upload');
     var fileInput = document.getElementById('file-input');
-    var resultOutput = document.getElementById('result');
+    //var resultOutput = document.getElementById('result');
     var body = document.getElementById('content');
 
     submit.addEventListener('click', function() {
@@ -20,7 +20,8 @@
         xhr.send(formData);
 
         xhr.onload = function() {
-            content.innerHTML = this.responseText;
+            //resultOutput.innerHTML = this.responseText;  //displays file metadata on upload form
+            content.innerHTML = this.responseText; //clears upload form
         }
     }
 }());
