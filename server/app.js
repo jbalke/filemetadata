@@ -9,6 +9,7 @@ var upload = multer({ storage: store }) //init multer with memory storage
 // Serve a static page for uploading a file.
 app.use('/', express.static('client'));
 
+// The client will upload a single file to be examined.
 app.post('/upload', upload.single('file'), (req, res) => {
     if (req.file) {
         res.status(200).json({

@@ -21,7 +21,7 @@
 
         xhr.onload = function() {
             //resultOutput.innerHTML = this.responseText;  //displays file metadata on upload form
-            content.innerHTML = this.responseText; //clears upload form
+            content.innerHTML = this.responseText; //replaces upload form with results
         }
     }
 }());
