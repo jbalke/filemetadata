@@ -1,5 +1,6 @@
 import express from 'express';
 import multer from 'multer';
+import path from 'path';
 
 export const app = express();
 
@@ -7,7 +8,7 @@ var store = multer.memoryStorage(); //store uploads in memory
 var upload = multer({ storage: store }) //init multer with memory storage
 
 // Serve a static page for uploading a file.
-app.use('/', express.static('client'));
+app.use('/', express.static('build/client'));
 
 // The client will upload a single file to be examined.
 app.post('/upload', upload.single('file'), (req, res) => {
